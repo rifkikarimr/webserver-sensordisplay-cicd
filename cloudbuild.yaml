@@ -24,7 +24,7 @@ steps:
   # Run unit tests
   - name: python
     entrypoint: python
-    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
+    args: ["-m", "pytest"]
   # [END cloudbuild_python_tests_yaml]
 
   # [START cloudbuild_python_image_yaml]
@@ -34,7 +34,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
+        "asia-east1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
         ".",
       ]
   # [END cloudbuild_python_image_yaml]
@@ -45,7 +45,7 @@ steps:
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
+        "asia-east1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
       ]
   # [END cloudbuild_python_push_yaml]
 
@@ -58,9 +58,9 @@ steps:
         "run",
         "deploy",
         "helloworld-${SHORT_SHA}",
-        "--image=us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
+        "--image=asia-east1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}",
         "--region",
-        "us-central1",
+        "asia-east1",
         "--platform",
         "managed",
         "--allow-unauthenticated",
@@ -77,5 +77,5 @@ artifacts:
 # [END cloudbuild_python_logs_yaml]
 # Store images in Google Artifact Registry
 images:
-  - us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
+  - asia-east1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
 # [END cloudbuild_python_yaml]
