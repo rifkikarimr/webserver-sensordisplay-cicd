@@ -1,10 +1,11 @@
 from collections import OrderedDict
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, Response, jsonify
 
 import conf
 
 app = Flask(__name__)
+
 
 
 def get_db_connection():
@@ -51,4 +52,4 @@ def temperature():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=9999)
+    app.run(host='0.0.0.0', port=80)
