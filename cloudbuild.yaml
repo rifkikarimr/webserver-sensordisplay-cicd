@@ -18,6 +18,10 @@ steps:
         "asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1",
         "--region",
         "asia-east1",
+        "--platform",
+        "managed",
+        "--port",
+        "80",
       ]
 images:
   - asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1
