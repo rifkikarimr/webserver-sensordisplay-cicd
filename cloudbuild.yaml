@@ -5,7 +5,7 @@ steps:
       ["build", "-t", "asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1", "."]
   # Push the container image to Container Registry
   - name: "asia.gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/arched-hybrid-368713/iotcicd-skripsi1"]
+    args: ["push", "gasia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1"]
   # Deploy container image to Cloud Run
   - name: "asia.gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
