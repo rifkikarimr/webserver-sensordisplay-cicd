@@ -1,12 +1,13 @@
 steps:
   # Build the container image
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/arched-hybrid-368713/iotcicd-skripsi1", "."]
+  - name: "asia.gcr.io/cloud-builders/docker"
+    args:
+      ["build", "-t", "asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1", "."]
   # Push the container image to Container Registry
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/arched-hybrid-368713/iotcicd-skripsi1"]
+  - name: "asia.gcr.io/cloud-builders/docker"
+    args: ["push", "asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1"]
   # Deploy container image to Cloud Run
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  - name: "asia.gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
       [
@@ -14,7 +15,7 @@ steps:
         "deploy",
         "iotcicd-skripsi1",
         "--image",
-        "gcr.io/arched-hybrid-368713/iotcicd-skripsi1",
+        "asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1",
         "--region",
         "asia-east1",
         "--platform",
@@ -23,4 +24,4 @@ steps:
         "80",
       ]
 images:
-  - gcr.io/arched-hybrid-368713/iotcicd-skripsi1
+  - asia.gcr.io/arched-hybrid-368713/iotcicd-skripsi1
