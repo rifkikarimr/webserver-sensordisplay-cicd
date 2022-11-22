@@ -16,7 +16,7 @@ steps:
         "--image",
         "gcr.io/arched-hybrid-368713/iotcicd-skripsi",
         "--region",
-        "asia-east1",
+        "us-central1",
         "--platform",
         "managed",
         "--port",
