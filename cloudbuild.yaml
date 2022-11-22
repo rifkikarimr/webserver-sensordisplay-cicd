@@ -17,8 +17,6 @@ steps:
         "gcr.io/arched-hybrid-368713/iotcicd-skripsi",
         "--region",
         "us-central1",
-        "--platform",
-        "managed",
         "--port",
         "80",
       ]
