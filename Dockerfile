@@ -18,4 +18,4 @@ COPY . /app
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app.py"] 
+CMD [ "app.py", "publisher.py", "subscriber.py"] 
